@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DealKerala — Offers &amp; Deals</title>
+  <meta name="description" content="Browse local offers, deals and promotions from businesses in your district." />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+<div class="page-bg">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- ════ NAVBAR ════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar-brand" id="brand-link">
+      <div class="logo-icon">🌴</div>
+      <span class="brand-deal">Deal</span><span class="brand-kerala">Kerala</span>
+    </a>
+
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="home.html" class="active" id="nav-offers">✨ Offers</a></li>
+      <li><a href="post_ad.html" class="btn-post-nav" id="nav-post">📢 Post Ad</a></li>
+      <li><a href="pricing.html" id="nav-pricing">💰 Pricing</a></li>
+      <li><a href="about.html" id="nav-about">ℹ️ About</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ════ PAGE HERO ════════════════════════════════ -->
+  <section class="page-hero">
+    <!-- District photo banner (set dynamically by home.js) -->
+    <div id="district-banner-img" class="district-banner-bg"></div>
+    <div class="orb-hero"></div>
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">🏠 Home</a>
+        <span>›</span>
+        <span id="breadcrumb-district">All Districts</span>
+      </div>
+      <div class="hero-row">
+        <div>
+          <div class="section-tag" style="margin-bottom:0.75rem">✨ Offers</div>
+          <h1>
+            Offers in <span class="district-name" id="page-district-name">Kerala</span>
+          </h1>
+          <p style="color:var(--clr-text-muted);margin-top:0.5rem;font-size:0.92rem">
+            Browse the latest offers & promotions from local businesses in your district
+          </p>
+        </div>
+        <button class="change-district-btn" onclick="window.location.href='index.html'">
+          📍 Change District
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FILTER BAR ═══════════════════════════════ -->
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-cat="all"      onclick="filterAds(this,'all')">🌟 All</button>
+    <button class="filter-btn" data-cat="food"            onclick="filterAds(this,'food')">🍽️ Food &amp; Dining</button>
+    <button class="filter-btn" data-cat="shopping"        onclick="filterAds(this,'shopping')">🛍️ Shopping</button>
+    <button class="filter-btn" data-cat="hotel"           onclick="filterAds(this,'hotel')">🏨 Hotels</button>
+    <button class="filter-btn" data-cat="services"        onclick="filterAds(this,'services')">🔧 Services</button>
+    <button class="filter-btn" data-cat="beauty"          onclick="filterAds(this,'beauty')">💆 Beauty</button>
+  </div>
+
+  <!-- ════ MAIN CONTENT ═════════════════════════════ -->
+  <main class="main-content" id="main-content">
+
+
+
+    <!-- BANNER ADS -->
+    <div class="section-header">
+      <h2>🔥 Hot Deals</h2>
+      <a href="#" class="view-all-link">View all →</a>
+    </div>
+    <div class="ad-grid" id="ad-grid">
+
+      <!-- Banner 1: Fashion -->
+      <div class="ad-card banner" data-cat="shopping" style="animation-delay:0.05s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80') center/cover;min-height:220px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">Trendy Threads</div>
+          <div class="ad-desc">Fashion Sale — Up to 60% off on all clothing. Limited time only!</div>
+          <div class="ad-tag">🛍️ Shopping</div>
+        </div>
+        <div class="ad-badge">60% OFF</div>
+      </div>
+
+      <!-- Medium 1: Food -->
+      <div class="ad-card medium" data-cat="food" style="animation-delay:0.1s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80') center/cover;min-height:200px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">Pizza Palace</div>
+          <div class="ad-desc">Buy 1 Get 1 Free on all large pizzas this weekend!</div>
+          <div class="ad-tag">🍕 Food &amp; Dining</div>
+        </div>
+        <div class="ad-badge">BOGO</div>
+      </div>
+
+      <!-- Medium 2: Hotel -->
+      <div class="ad-card medium" data-cat="hotel" style="animation-delay:0.15s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80') center/cover;min-height:200px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">Harbour View Resort</div>
+          <div class="ad-desc">Weekend getaway packages starting ₹2,499/night</div>
+          <div class="ad-tag">🏨 Hotel</div>
+        </div>
+        <div class="ad-badge">WEEKEND</div>
+      </div>
+
+      <!-- Small 1: Beauty -->
+      <div class="ad-card small" data-cat="beauty" style="animation-delay:0.2s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80') center/cover;min-height:180px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">Serenity Spa</div>
+          <div class="ad-desc">Full body massage — 20% off</div>
+          <div class="ad-tag">💆 Beauty</div>
+        </div>
+        <div class="ad-badge">20% OFF</div>
+      </div>
+
+      <!-- Small 2: Food -->
+      <div class="ad-card small" data-cat="food" style="animation-delay:0.25s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80') center/cover;min-height:180px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">Brew &amp; Bites Café</div>
+          <div class="ad-desc">Free dessert with any coffee order</div>
+          <div class="ad-tag">☕ Food</div>
+        </div>
+      </div>
+
+      <!-- Small 3: Services -->
+      <div class="ad-card small" data-cat="services" style="animation-delay:0.3s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80') center/cover;min-height:180px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">SwiftFix Services</div>
+          <div class="ad-desc">AC service &amp; repair — ₹399 flat rate</div>
+          <div class="ad-tag">🔧 Services</div>
+        </div>
+        <div class="ad-badge">FLAT RATE</div>
+      </div>
+
+      <!-- Banner 2: Electronics -->
+      <div class="ad-card banner" data-cat="shopping" style="animation-delay:0.35s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=800&q=80') center/cover;min-height:220px">
+        </div>
+        <div class="ad-overlay">
+          <div class="ad-biz">TechZone Electronics</div>
+          <div class="ad-desc">Mega Sale — Biggest discounts on smartphones, laptops &amp; accessories. Up to 40% off!</div>
+          <div class="ad-tag">🛍️ Shopping</div>
+        </div>
+        <div class="ad-badge">MEGA SALE</div>
+      </div>
+
+      <!-- Micro 1: Food -->
+      <div class="ad-card micro" data-cat="food" style="animation-delay:0.4s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80') center/cover;min-height:160px">
+        </div>
+        <div class="ad-overlay" style="padding:0.7rem 0.7rem 0.55rem">
+          <div class="ad-biz" style="font-size:0.85rem">Green Plate</div>
+          <div class="ad-desc">Vegan menu 15% off</div>
+          <div class="ad-tag">🥗 Food</div>
+        </div>
+      </div>
+
+      <!-- Micro 2: Beauty -->
+      <div class="ad-card micro" data-cat="beauty" style="animation-delay:0.45s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80') center/cover;min-height:160px">
+        </div>
+        <div class="ad-overlay" style="padding:0.7rem 0.7rem 0.55rem">
+          <div class="ad-biz" style="font-size:0.85rem">Glam Studio</div>
+          <div class="ad-desc">Nail art ₹299</div>
+          <div class="ad-tag">💅 Beauty</div>
+        </div>
+      </div>
+
+      <!-- Micro 3: Hotel -->
+      <div class="ad-card micro" data-cat="hotel" style="animation-delay:0.5s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80') center/cover;min-height:160px">
+        </div>
+        <div class="ad-overlay" style="padding:0.7rem 0.7rem 0.55rem">
+          <div class="ad-biz" style="font-size:0.85rem">Palm Beach Inn</div>
+          <div class="ad-desc">Early bird 25% off</div>
+          <div class="ad-tag">🏨 Hotel</div>
+        </div>
+        <div class="ad-badge">25% OFF</div>
+      </div>
+
+      <!-- Micro 4: Services -->
+      <div class="ad-card micro" data-cat="services" style="animation-delay:0.55s">
+        <div class="ad-placeholder" style="background:url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80') center/cover;min-height:160px">
+        </div>
+        <div class="ad-overlay" style="padding:0.7rem 0.7rem 0.55rem">
+          <div class="ad-biz" style="font-size:0.85rem">QuickWash</div>
+          <div class="ad-desc">Car wash ₹199 only</div>
+          <div class="ad-tag">🚗 Services</div>
+        </div>
+      </div>
+
+    </div><!-- /ad-grid -->
+
+    <!-- CTA to post own ad -->
+    <div style="text-align:center;padding:3rem 0 1rem">
+      <div class="section-tag" style="margin-bottom:1rem;display:inline-flex">📢 Grow Your Business</div>
+      <h2 style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;margin-bottom:0.75rem">
+        Want to <span style="color:var(--clr-teal)">Post Your Ad</span> Here?
+      </h2>
+      <p style="color:var(--clr-text-muted);margin-bottom:1.5rem;max-width:440px;margin-inline:auto">
+        Reach thousands of customers in your district. Simple, affordable ad packages starting at ₹199.
+      </p>
+      <a href="post_ad.html" class="btn btn-primary btn-lg">
+        📢 Post Your Advertisement
+      </a>
+    </div>
+
+    <!-- ════ OFFER MODAL ═══════════════════════════════ -->
+    <div id="offer-modal" class="offer-modal-overlay">
+      <div class="offer-modal-card">
+        <button class="modal-close-btn" id="modal-close" aria-label="Close modal">&times;</button>
+        <div class="modal-img-header" id="modal-img"></div>
+        <div class="modal-content-body">
+          <div class="modal-tags">
+            <span class="modal-tag-loc" id="modal-loc">📍 Location</span>
+            <span class="modal-tag-date" id="modal-date">⏳ Limited Time</span>
+          </div>
+          <h2 id="modal-title">Offer Title</h2>
+          <p id="modal-desc">Offer Description</p>
+          <div class="modal-actions">
+            <button class="btn btn-primary" onclick="alert('Contact feature coming soon!')">📞 Contact Business</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- /main-content -->
+
+  <script src="adDb.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

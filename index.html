@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DealKerala — Find Local Offers &amp; Deals Across Kerala</title>
+  <meta name="description" content="Discover the best offers, promotions and deals from local businesses across all 14 districts of Kerala. Hotels, restaurants, shops and more." />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ── Animated background ─────────────────────────── -->
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-grid"></div>
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- Kerala-inspired wavy silhouette -->
+      <path d="M0,600 Q200,480 400,540 Q600,600 800,500 Q1000,400 1200,460 Q1350,510 1440,480 L1440,900 L0,900 Z" fill="rgba(0,201,177,0.04)" />
+      <path d="M0,700 Q300,630 500,670 Q700,710 900,640 Q1100,570 1300,620 Q1380,640 1440,620 L1440,900 L0,900 Z" fill="rgba(245,197,66,0.04)" />
+    </svg>
+  </div>
+
+  <!-- ── Particle canvas ─────────────────────────────── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ── Hero 3-column wrapper ─────────────────────────── -->
+  <div class="hero-wrapper">
+
+    <!-- ── Left floating panel ──────────────────────────── -->
+    <div class="hero-left">
+
+      <div class="deco-bubble db-1 anim-fadeUp" style="animation-delay:.4s">🌴</div>
+      <div class="deco-ring dr-lg anim-fadeUp" style="animation-delay:.55s"></div>
+      <div class="deco-bubble db-2 anim-fadeUp" style="animation-delay:.7s">🌊</div>
+      <div class="deco-dots anim-fadeUp" style="animation-delay:.85s">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="deco-bubble db-3 anim-fadeUp" style="animation-delay:1.0s">📍</div>
+      <div class="deco-stat-pill anim-fadeUp" style="animation-delay:1.15s">
+        <span class="dsp-num">14</span>
+        <span class="dsp-lbl">Districts</span>
+      </div>
+
+    </div>
+
+    <!-- ── Main content ───────────────────────────────── -->
+  <div class="landing-center">
+
+    <!-- Logo -->
+    <div class="logo-mark anim-fadeUp">
+      <div class="logo-emblem">🌴</div>
+      <div class="logo-text-wrap">
+        <div class="logo-name">
+          <span class="deal">Deal</span><span class="kerala">Kerala</span>
+        </div>
+        <div class="logo-tagline">Your Local Deals Hub</div>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-headline anim-fadeUp delay-1">
+      Discover <em>Incredible Deals</em> from Local Businesses
+    </h1>
+    <p class="hero-sub anim-fadeUp delay-2">
+      Offers, promotions and advertisements from shops, hotels &amp; restaurants across all 14 districts of Kerala.
+    </p>
+
+    <!-- Location picker card -->
+    <div class="location-card anim-fadeUp delay-3">
+      <h2><span class="pin">📍</span> Select Your District</h2>
+
+      <div class="district-select-wrapper">
+        <span class="pin-icon">📍</span>
+        <select id="district-select" aria-label="Choose your district">
+          <option value="" disabled selected>— Choose a district —</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+          <option value="Kollam">Kollam</option>
+          <option value="Pathanamthitta">Pathanamthitta</option>
+          <option value="Alappuzha">Alappuzha</option>
+          <option value="Kottayam">Kottayam</option>
+          <option value="Idukki">Idukki</option>
+          <option value="Ernakulam">Ernakulam</option>
+          <option value="Thrissur">Thrissur</option>
+          <option value="Palakkad">Palakkad</option>
+          <option value="Malappuram">Malappuram</option>
+          <option value="Kozhikode">Kozhikode</option>
+          <option value="Wayanad">Wayanad</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Kasaragod">Kasaragod</option>
+        </select>
+      </div>
+
+      <button id="btn-view-deals" class="btn btn-primary btn-lg" disabled>
+        <span>🔍</span> View Offers &amp; Deals
+      </button>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-val">14</div>
+          <div class="stat-lbl">Districts</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">500+</div>
+          <div class="stat-lbl">Active Ads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val">200+</div>
+          <div class="stat-lbl">Businesses</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- ── How it works row ──────────────────────────────── -->
+    <div class="how-row anim-fadeUp delay-4">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-icon">📍</div>
+        <div class="how-label">Pick your District</div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-icon">🔍</div>
+        <div class="how-label">Browse Deals</div>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-icon">🎉</div>
+        <div class="how-label">Grab the Offer</div>
+      </div>
+    </div>
+
+    </div><!-- /landing-center -->
+
+    <!-- ── Right floating panel ─────────────────────────── -->
+    <div class="hero-right">
+
+      <div class="deco-bubble db-4 anim-fadeUp" style="animation-delay:.45s">🌿</div>
+      <div class="deco-ring dr-md anim-fadeUp" style="animation-delay:.6s"></div>
+      <div class="deco-bubble db-5 anim-fadeUp" style="animation-delay:.75s">🏔️</div>
+      <div class="deco-dots anim-fadeUp" style="animation-delay:.9s">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="deco-bubble db-6 anim-fadeUp" style="animation-delay:1.05s">⭐</div>
+      <div class="deco-live-pill anim-fadeUp" style="animation-delay:1.2s">
+        <span class="live-dot"></span>
+        <span><strong>500+</strong> Deals Live</span>
+      </div>
+
+    </div><!-- /hero-right -->
+
+  </div><!-- /hero-wrapper -->
+
+  <!-- ── Marquee ticker ────────────────────────────────────── -->
+  <div class="marquee-bar">
+    <div class="marquee-track" id="marquee-track">
+      <span>🌴 Thiruvananthapuram</span>
+      <span>🌊 Alappuzha</span>
+      <span>🏔️ Idukki</span>
+      <span>🌿 Wayanad</span>
+      <span>🏙️ Ernakulam</span>
+      <span>🎭 Thrissur</span>
+      <span>🌺 Kozhikode</span>
+      <span>⛵ Kollam</span>
+      <span>🏞️ Palakkad</span>
+      <span>🌸 Malappuram</span>
+      <span>🏖️ Kasaragod</span>
+      <span>🌄 Kannur</span>
+      <span>⭐ 500+ Active Deals</span>
+      <span>🔥 New Offers Daily</span>
+      <span>💰 Best Local Prices</span>
+      <!-- duplicate for seamless loop -->
+      <span>🌴 Thiruvananthapuram</span>
+      <span>🌊 Alappuzha</span>
+      <span>🏔️ Idukki</span>
+      <span>🌿 Wayanad</span>
+      <span>🏙️ Ernakulam</span>
+      <span>🎭 Thrissur</span>
+      <span>🌺 Kozhikode</span>
+      <span>⛵ Kollam</span>
+      <span>🏞️ Palakkad</span>
+      <span>🌸 Malappuram</span>
+      <span>🏖️ Kasaragod</span>
+      <span>🌄 Kannur</span>
+      <span>⭐ 500+ Active Deals</span>
+      <span>🔥 New Offers Daily</span>
+      <span>💰 Best Local Prices</span>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
