@@ -73,14 +73,30 @@ body > *:not(.page-bg) { position: relative; z-index: 1; }
 @media (max-width: 600px) {
   .hamburger { display: flex; }
   .navbar-links {
-    position: absolute; top: 100%; left: 0; width: 100%; margin: 0;
-    background: rgba(255,248,240,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    flex-direction: column; padding: 1.5rem; gap: 1rem;
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background: rgba(255,248,240,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
     border-bottom: 1px solid var(--clr-border);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all 0.3s ease; pointer-events: none; z-index: -1;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    z-index: 1500;
   }
-  .navbar-links.active { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
+  .navbar-links.active {
+    display: flex;
+    animation: navSlideDown 0.25s ease both;
+  }
+  @keyframes navSlideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
   .navbar-links a { width: 100%; text-align: center; padding: 0.8rem; font-size: 1.05rem; margin: 0; }
   .navbar-links .btn-post-nav { display: block; width: 100%; margin-top: 0.5rem; text-align: center; }
 }

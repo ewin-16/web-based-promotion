@@ -44,39 +44,7 @@ button, select, input { font-family: inherit; }
 ::-webkit-scrollbar-track { background: var(--clr-surface-2); }
 ::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 3px; }
 
-/* ── Navbar ────────────────────────────────────────────────── */
-.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; padding: 0 2.5rem; background: rgba(255,248,240,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--clr-border); gap: 2rem; box-shadow: 0 2px 20px rgba(240,90,26,0.08); }
-.navbar-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; flex-shrink: 0; }
-.navbar-brand .logo-icon { width: 38px; height: 38px; background: var(--grad-primary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 16px var(--clr-primary-glow); }
-.navbar-brand .brand-deal { color: var(--clr-primary); }
-.navbar-brand .brand-kerala { color: var(--clr-text); }
-.navbar-links { display: flex; align-items: center; gap: 0.25rem; margin-left: auto; list-style: none; }
-.navbar-links a { padding: 0.45rem 1rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 500; color: var(--clr-text-muted); transition: color var(--trans-fast), background var(--trans-fast); }
-.navbar-links a:hover, .navbar-links a.active { color: var(--clr-text); background: var(--clr-surface-3); }
-.navbar-links .btn-post-nav { background: var(--grad-primary); color: #fff !important; font-weight: 700; padding: 0.45rem 1.2rem; border-radius: var(--radius-sm); box-shadow: 0 4px 16px var(--clr-primary-glow); }
-.navbar-links .btn-post-nav:hover { opacity: 0.88; box-shadow: 0 6px 24px var(--clr-primary-glow); }
-/* Hamburger Button */
-.hamburger { display: none; flex-direction: column; justify-content: space-between; width: 24px; height: 18px; background: none; border: none; cursor: pointer; z-index: 1001; }
-.hamburger span { display: block; width: 100%; height: 2px; background: var(--clr-primary); border-radius: 2px; transition: all 0.3s ease; }
-.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-@media (max-width: 900px) { .navbar { padding: 0 1.2rem; gap: 1rem; } }
-@media (max-width: 600px) {
-  .hamburger { display: flex; }
-  .navbar-links {
-    position: absolute; top: 100%; left: 0; width: 100%; margin: 0;
-    background: rgba(255,248,240,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    flex-direction: column; padding: 1.5rem; gap: 1rem;
-    border-bottom: 1px solid var(--clr-border);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all 0.3s ease; pointer-events: none; z-index: -1;
-  }
-  .navbar-links.active { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
-  .navbar-links a { width: 100%; text-align: center; padding: 0.8rem; font-size: 1.05rem; margin: 0; }
-  .navbar-links .btn-post-nav { display: block; width: 100%; margin-top: 0.5rem; text-align: center; }
-}
 
 /* ── Buttons ────────────────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.75rem 1.8rem; border-radius: var(--radius-md); font-family: var(--font-head); font-size: 1rem; font-weight: 700; cursor: pointer; border: none; transition: all var(--trans-med); }
@@ -87,7 +55,6 @@ button, select, input { font-family: inherit; }
 .btn-ghost { background: transparent; border: 2px solid var(--clr-border); color: var(--clr-text-muted); }
 .btn-ghost:hover { border-color: var(--clr-primary); color: var(--clr-primary); }
 .btn-lg { padding: 1rem 2.4rem; font-size: 1.1rem; }
-.btn-sm { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
 .w-full { width: 100%; }
 
 /* ── Section tag ─────────────────────────────────────────── */
