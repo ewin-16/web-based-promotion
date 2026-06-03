@@ -79,9 +79,10 @@ function previewPoster(e) {
 
 /* ── Go to Step 2: validate + calculate price ────────── */
 function goToStep2() {
-  var biz  = document.getElementById('biz-name')  ? document.getElementById('biz-name').value.trim()  : '';
-  var cat  = document.getElementById('biz-cat')   ? document.getElementById('biz-cat').value           : '';
-  var dist = document.getElementById('biz-district') ? document.getElementById('biz-district').value   : '';
+  var biz   = document.getElementById('biz-name')     ? document.getElementById('biz-name').value.trim()     : '';
+  var cat   = document.getElementById('biz-cat')      ? document.getElementById('biz-cat').value              : '';
+  var dist  = document.getElementById('biz-district') ? document.getElementById('biz-district').value         : '';
+  var phone = document.getElementById('biz-phone')    ? document.getElementById('biz-phone').value.trim()     : '';
 
   // Validation with if/else
   if (!biz) {
@@ -92,6 +93,10 @@ function goToStep2() {
     return;
   } else if (!dist) {
     alert('Please select your district.');
+    return;
+  } else if (!phone || !/^[0-9]{10}$/.test(phone)) {
+    alert('Please enter a valid 10-digit contact number.');
+    document.getElementById('biz-phone').focus();
     return;
   } else if (!selSize) {
     alert('Please select an ad size.');

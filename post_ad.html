@@ -99,8 +99,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label" for="biz-phone">Contact Number</label>
-          <input class="form-input" type="tel" id="biz-phone" placeholder="+91 98765 43210"/>
+          <label class="form-label" for="biz-phone">Contact Number *</label>
+          <input class="form-input" type="tel" id="biz-phone" placeholder="10-digit mobile number" required maxlength="10" minlength="10" pattern="[0-9]{10}" inputmode="numeric"/>
         </div>
         <div class="form-group full">
           <label class="form-label" for="biz-desc">Offer / Promotion Tagline</label>

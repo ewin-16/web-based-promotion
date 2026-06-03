@@ -50,7 +50,7 @@ button, select, input { font-family: inherit; }
 .bg-orb-2 { width: 360px; height: 360px; background: #f05a1a; bottom: -80px; right: 5%; animation-delay: 2s; }
 .bg-orb-3 { width: 280px; height: 280px; background: #00a896; top: 38%; right: -80px; animation-delay: 1s; }
 .bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(240,90,26,0.045) 1px,transparent 1px), linear-gradient(90deg,rgba(240,90,26,0.045) 1px,transparent 1px); background-size: 48px 48px; }
-body > *:not(.page-bg) { position: relative; z-index: 1; }
+body > *:not(.page-bg):not(.navbar) { position: relative; z-index: 1; }
 
 /* ── Navbar ──────────────────────────────────────────────── */
 .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; padding: 0 2.5rem; background: rgba(255,248,240,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--clr-border); gap: 2rem; box-shadow: 0 2px 20px rgba(240,90,26,0.08); }
@@ -104,6 +104,9 @@ body > *:not(.page-bg) { position: relative; z-index: 1; }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* Desktop & tablet: only 3 sizes — banner (full), medium (half), small/micro (third) */
+.ad-card.micro { grid-column: span 4; }
+
 @media (max-width: 900px) { .ad-card.medium { grid-column: span 12; } .ad-card.small { grid-column: span 6; } .ad-card.micro { grid-column: span 6; } .navbar { padding: 0 1.2rem; gap: 1rem; } }
 @media (max-width: 600px) {
   /* Tier hierarchy preserved on mobile:
@@ -116,24 +119,25 @@ body > *:not(.page-bg) { position: relative; z-index: 1; }
   .ad-card.medium { grid-column: span 12; }
   .ad-card.small  { grid-column: span 6; }
   .ad-card.micro  { grid-column: span 6; }
+  .navbar { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255,248,240,0.98); overflow: visible; }
   .hamburger { display: flex; }
   .navbar-links {
     display: none;
-    position: fixed;
-    top: var(--nav-h);
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     margin: 0;
     background: rgba(255,248,240,0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 1.5rem;
     gap: 1rem;
     border-bottom: 1px solid var(--clr-border);
     box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     z-index: 1500;
+    list-style: none;
   }
+
   .navbar-links.active {
     display: flex;
     animation: navSlideDown 0.25s ease both;
